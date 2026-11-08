@@ -32,7 +32,7 @@ def fetch_json(
     url: str,
     timeout: float = 10.0,
     retries: int = 3,
-    headers: dict | None = None,
+    headers=None,
     sleep=time.sleep,
 ):
     """GET a URL and parse JSON, retrying transient failures."""

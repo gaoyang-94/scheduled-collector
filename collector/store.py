@@ -28,7 +28,7 @@ class Store:
         self.conn.executescript(SCHEMA)
         self.conn.commit()
 
-    def upsert_many(self, items, key: str = "id", now: float | None = None) -> dict:
+    def upsert_many(self, items, key: str = "id", now=None) -> dict:
         """Insert or update rows; returns counts of inserted/updated."""
         now = time.time() if now is None else now
         inserted = updated = 0
