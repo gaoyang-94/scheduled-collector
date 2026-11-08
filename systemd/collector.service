@@ -1,0 +1,16 @@
+[Unit]
+Description=scheduled-collector polling job
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/scheduled-collector
+ExecStart=/usr/bin/python3 -m collector.cli --url https://example.com/api/items --db /var/lib/collector/items.db --interval 900
+Restart=always
+RestartSec=10
+# fail loudly instead of silently looping
+StartLimitBurst=5
+StartLimitIntervalSec=600
+
+[Install]
+WantedBy=multi-user.target
