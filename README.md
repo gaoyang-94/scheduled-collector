@@ -1,5 +1,7 @@
 # scheduled-collector
 
+[![tests](https://github.com/gaoyang-94/scheduled-collector/actions/workflows/tests.yml/badge.svg)](https://github.com/gaoyang-94/scheduled-collector/actions/workflows/tests.yml)
+
 A polling collector that survives the night: retries what is worth retrying,
 fails fast on what is not, and stores results with upsert semantics so a
 15-minute poll does not turn your table into a pile of duplicates.
